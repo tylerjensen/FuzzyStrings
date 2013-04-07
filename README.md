@@ -8,11 +8,13 @@ DuoVia.FuzzyStrings
 > This is partially derived from multiple open sources. See individual algorithm classes for attribution.
 >
 > A developer may wish to take advantage of one or more of the algorithms included in this libray or on the contrived string comparison extension methods like this:
-'''C#
+
+```c#
 bool isEqual = input.FuzzyEquals(name);
 double coefficient = input.FuzzyMatch(name);
-'''
->
+```
+
+
 Included Algorithms
 -------------------
 
