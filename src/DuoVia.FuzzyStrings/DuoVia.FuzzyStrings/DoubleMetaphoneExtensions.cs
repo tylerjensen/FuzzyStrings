@@ -504,7 +504,8 @@ namespace DuoVia.FuzzyStrings
                         }
                         else
                             //spanish pron. of e.g. 'bajador'
-                            if (IsVowel(workingString[current - 1])
+                            if (current > 0 
+                                && IsVowel(workingString[current - 1])
                                 && !isSlavoGermanic && ((workingString[current + 1] == charA)
                                 || (workingString[current + 1] == charO)))
                             {
@@ -862,7 +863,7 @@ namespace DuoVia.FuzzyStrings
                         }
 
                         //Arnow should match Arnoff
-                        if (((current == last) && IsVowel(workingString[current - 1]))
+                        if ((current == last && current > 0 && IsVowel(workingString[current - 1]))
                             || StringAt(workingString, (current - 1), strEWSKI, strEWSKY, strOWSKI, strOWSKY)
                             || StringAt(workingString, 0, strSCH))
                         {

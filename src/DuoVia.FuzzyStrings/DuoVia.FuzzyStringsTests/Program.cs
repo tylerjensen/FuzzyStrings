@@ -13,9 +13,22 @@ namespace fuzzytest
     {
         static void Main(string[] args)
         {
+            IssueTest();
             NameMatching();
             AddressMatching();
             Console.ReadLine();
+        }
+
+        private static void IssueTest()
+        {
+            Console.WriteLine("test".FuzzyMatch("w"));
+            Console.WriteLine("test".FuzzyMatch("W"));
+            Console.WriteLine("test".FuzzyMatch("w "));
+            Console.WriteLine("test".FuzzyMatch("W "));
+            Console.WriteLine("test".FuzzyMatch(" w"));
+            Console.WriteLine("test".FuzzyMatch(" W"));
+            Console.WriteLine("test".FuzzyMatch(" w "));
+            Console.WriteLine("test".FuzzyMatch(" W "));
         }
 
         private static void NameMatching()
