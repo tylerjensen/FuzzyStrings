@@ -4,11 +4,11 @@
   Title:        DuoVia.FuzzyString 
   Description:  A Collection of Fuzzy String Algorithms for .NET.
   
-  Copyright (C) 2011-2013 Duovia Inc.
+  Copyright (C) 2011-2018 Tyler Jensen.
   
-  Author: Duovia Inc.  
+  Author: Tyler Jensen.  
   
-  Source: https://github.com/duovia/duovia-fuzzystrings
+  Source: https://github.com/tylerjensen/duovia-fuzzystrings
   
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
