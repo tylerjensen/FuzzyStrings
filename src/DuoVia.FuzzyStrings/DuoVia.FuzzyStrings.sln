@@ -3,12 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DuoVia.FuzzyStrings", "DuoVia.FuzzyStrings\DuoVia.FuzzyStrings.csproj", "{29385A2D-EAC1-4777-BC01-C060C2002307}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DuoVia.FuzzyStrings", "DuoVia.FuzzyStrings\DuoVia.FuzzyStrings.csproj", "{29385A2D-EAC1-4777-BC01-C060C2002307}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DuoVia.FuzzyStringsTests", "DuoVia.FuzzyStringsTests\DuoVia.FuzzyStringsTests.csproj", "{96D4374A-F7A4-4EF4-8F6A-87DFE1A70B7F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DuoVia.FuzzyStringsTests", "DuoVia.FuzzyStringsTests\DuoVia.FuzzyStringsTests.csproj", "{96D4374A-F7A4-4EF4-8F6A-87DFE1A70B7F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D1FE470F-BB40-4A26-9721-23B8D5BB3C77}"
 	ProjectSection(SolutionItems) = preProject
+		License.txt = License.txt
 		..\..\README.md = ..\..\README.md
 	EndProjectSection
 EndProject
