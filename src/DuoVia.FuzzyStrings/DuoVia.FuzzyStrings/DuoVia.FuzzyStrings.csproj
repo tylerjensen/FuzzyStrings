@@ -1,13 +1,19 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
+  <PropertyGroup Condition=" '$(OS)' != 'Windows_NT' ">
+    <TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(OS)' == 'Windows_NT' "> 
+    <TargetFrameworks>netstandard2.0;netstandard2.1;net462</TargetFrameworks>
+  </PropertyGroup>
+
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;net462</TargetFrameworks>
-    <Version>2.0.1</Version>
+    <Version>2.1.0</Version>
     <Description>A Collection of Fuzzy String Algorithms for .NET. Partially derived from multiple open sources. See individual algorithm classes for attributions.</Description>
     <Copyright>Tyler Jensen</Copyright>
     <PackageLicenseUrl>http://www.apache.org/licenses/LICENSE-2.0</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/tylerjensen/duovia-fuzzystrings</PackageProjectUrl>
-    <PackageReleaseNotes>Updating to Visual Studio 2017 project with NetStandard 2.0 and .NET Framework 4.6.2 support. Package updates.</PackageReleaseNotes>
+    <PackageReleaseNotes>NetStandard 2.1 support added. A few bug fix contributions.</PackageReleaseNotes>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>Tyler Jensen</Authors>
     <Company />
