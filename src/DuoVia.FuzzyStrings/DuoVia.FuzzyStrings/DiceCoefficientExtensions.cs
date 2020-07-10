@@ -33,11 +33,7 @@ namespace DuoVia.FuzzyStrings
 		/// <returns></returns>
 		public static double DiceCoefficient(this string[] nGrams, string[] compareToNGrams)
 		{
-			int matches = 0;
-			foreach (var nGram in nGrams)
-			{
-				if (compareToNGrams.Any(x => x == nGram)) matches++;
-			}
+			int matches = nGrams.Intersect(compareToNGrams).Count();
 			if (matches == 0) return 0.0d;
 			double totalBigrams = nGrams.Length + compareToNGrams.Length;
 			return (2 * matches) / totalBigrams;
