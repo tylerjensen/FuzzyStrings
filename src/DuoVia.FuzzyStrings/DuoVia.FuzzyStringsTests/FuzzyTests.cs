@@ -122,6 +122,17 @@ namespace DuoVia.FuzzyStringsTests
         }
 
         [Theory]
+        [InlineData("kitten", "sitting", 3)]
+        [InlineData("78135", "75130", 2)]
+        [InlineData("78135x", "75130x", 2)]
+        public void LevenshteinDistancePreciseTests(string input, string match, int expectedResult)
+        {
+            var result = input.LevenshteinDistance(match);
+            output.WriteLine($"LevenshteinDistance of \"{match}\" against \"{input}\" was {result}, expecting {expectedResult}.");
+            Assert.Equal(expectedResult, result);
+        }
+
+        [Theory]
         [InlineData("test", "w")]
         [InlineData("test", "W")]
         [InlineData("test", "w ")]

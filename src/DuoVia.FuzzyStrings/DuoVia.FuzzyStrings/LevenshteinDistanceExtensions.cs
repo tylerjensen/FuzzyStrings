@@ -28,20 +28,18 @@ namespace DuoVia.FuzzyStrings
 				input = input.ToLower();
 				comparedTo = comparedTo.ToLower();
 			}
-			int inputLen = input.Length;
-			int comparedToLen = comparedTo.Length;
 
-			int[,] matrix = new int[inputLen, comparedToLen];
+			int[,] matrix = new int[input.Length + 1, comparedTo.Length + 1];
 
 			//initialize
-			for (int i = 0; i < inputLen; i++) matrix[i, 0] = i;
-			for (int i = 0; i < comparedToLen; i++) matrix[0, i] = i;
+			for (int i = 0; i <= matrix.GetUpperBound(0); i++) matrix[i, 0] = i;
+			for (int i = 0; i <= matrix.GetUpperBound(1); i++) matrix[0, i] = i;
 
 			//analyze
-			for (int i = 1; i < inputLen; i++)
+			for (int i = 1; i <= matrix.GetUpperBound(0); i++)
 			{
 				var si = input[i - 1];
-				for (int j = 1; j < comparedToLen; j++)
+				for (int j = 1; j <= matrix.GetUpperBound(1); j++)
 				{
 					var tj = comparedTo[j - 1];
 					int cost = (si == tj) ? 0 : 1;
@@ -62,7 +60,7 @@ namespace DuoVia.FuzzyStrings
 					matrix[i, j] = cell;
 				}
 			}
-			return matrix[inputLen - 1, comparedToLen - 1];
+			return matrix[matrix.GetUpperBound(0), matrix.GetUpperBound(1)];
 		}
 
 		private static int FindMinimum(params int[] p)
