@@ -161,7 +161,6 @@ pip-log.txt
 
 # Mac crap
 .DS_Store
-/src/DuoVia.FuzzyStrings/.vs/DuoVia.FuzzyStrings/v15/Server/sqlite3
-/src/DuoVia.FuzzyStrings/.vs/DuoVia.FuzzyStrings/DesignTimeBuild
-/src/DuoVia.FuzzyStrings/.vs/DuoVia.FuzzyStrings/v16/TestStore/0/004.testlog
-/src/DuoVia.FuzzyStrings/.vs/DuoVia.FuzzyStrings/v16/TestStore/0/testlog.manifest
+.vs/
+.vscode/
+.idea/

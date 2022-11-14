@@ -50,6 +50,7 @@ namespace DuoVia.FuzzyStringsTests
         }
 
         [Theory]
+        [InlineData("wwww", "w")]
         [InlineData("test", "w")]
         [InlineData("test", "W")]
         [InlineData("test", "w ")]
@@ -78,11 +79,30 @@ namespace DuoVia.FuzzyStringsTests
         [InlineData("2130 South Fort Union Blvd.", "Rural Route 2 Box 29")]
         [InlineData("2130 South Fort Union Blvd.", "PO Box 3487")]
         [InlineData("2130 South Fort Union Blvd.", "3 Harvard Square")]
+        [InlineData("eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee", "ee")]
+        [InlineData("aaaaaaaaa", "aaaaaaaaa")]
         public void DiceCoefficientTests(string input, string match)
         {
             var result = input.DiceCoefficient(match);
+            var reversedResult = match.DiceCoefficient(input);
+            var inputBiGrams = input.ToBiGrams(false);
+            var matchBiGrams = match.ToBiGrams(false);
+            var biGramResult = inputBiGrams.DiceCoefficient(matchBiGrams);
+            var reversedBiGramResult = matchBiGrams.DiceCoefficient(inputBiGrams);
+            output.WriteLine($"DiceCoefficient of \"{match}\" against \"{input}\" was {result} (reversed was {reversedResult}), biGramResult was {biGramResult} (reversed was {reversedBiGramResult}).");
+
+            Assert.True(Math.Abs(result - reversedResult) < double.Epsilon);
+            Assert.True(Math.Abs(biGramResult - reversedBiGramResult) < double.Epsilon);
+            Assert.True(Math.Abs(result - biGramResult) < double.Epsilon);
             Assert.True(result >= 0.0);
-            output.WriteLine($"DiceCoefficient of \"{match}\" against \"{input}\" was {result}.");
+            Assert.True(result <= 1.0);
+            Assert.True(biGramResult >= 0.0);
+            Assert.True(biGramResult <= 1.0);
+            if (input == match)
+            {
+                Assert.True(Math.Abs(result - 1.0) < double.Epsilon);
+                Assert.True(Math.Abs(biGramResult - 1.0) < double.Epsilon);
+            }
         }
 
         [Theory]
